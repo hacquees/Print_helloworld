@@ -1,0 +1,8 @@
+print("Hello World!")
+print("Hello","World!")
+print("Hello"+"World!")
+print("%s\n%s"%("Hello","World!"))
+print("***************************")
+print("Hello","\nWorld!")
+print("***************************")
+print("Hello","\n","World!")
