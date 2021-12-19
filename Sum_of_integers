@@ -1,0 +1,14 @@
+# Python program to find the sum of integers between 0 and n where n is provided by user
+n=int(input("Enter a number: "))
+s=0
+i=0
+if n>0:
+	while i<=n:
+		s=s+i
+		i+=1
+	print("The sum is",s)
+else:
+	while i>=n:
+		s=s+i
+		i-=1
+	print("The sum is",s)
