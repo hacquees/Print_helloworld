@@ -16,6 +16,31 @@ def MaxHeap(arr,n):
     for i in range(n//2-1,-1,-1):
         heapify(arr,n,i)
 
-l=list(map(int,input().split()))  
-MaxHeap(l,len(l))
+def Insert(data):
+    arr=l
+    n=len(arr)
+    if n==0:
+        arr.append(data)
+    else:
+        arr.append(data)
+        MaxHeap(arr,n)
+        # for i in range(n//2-1,-1,-1):
+        #     heapify(arr,n,i)
+             
+def Delete(arr,num):
+    n=len(arr)
+    arr.remove(num)
+    MaxHeap(arr,n)
+    # for i in range(n//2-1,-1,-1):
+    #         heapify(arr,n,i)     
+    
+
+l=[]
+Insert(3)  
+Insert(12)
+Insert(11)
+Insert(7)
+Insert(9)
+Insert(15)
+Insert(2)
 print(*l)
