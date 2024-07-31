@@ -20,9 +20,28 @@ The third child gets 1 candy because it satisfies the above two conditions.
 """
 
 def candy(ratings):
+    # n=len(ratings)
+    # l=[1]*n
+    # r=[1]*n
+    # for i in range(1,n):
+    #     if ratings[i]>ratings[i-1]:
+    #         l[i]=l[i-1]+1
+
+
+    # for i in range(n-2,-1,-1):
+    #     if ratings[i]>ratings[i+1]:
+    #         r[i]=r[i+1]+1
+    # c=0
+    # for i in range(n):
+    #     c+=max(r[i],l[i])
+
+    # return c
+    
+    # Using One List only
+    
     n=len(ratings)
     l=[1]*n
-    r=[1]*n
+
     for i in range(1,n):
         if ratings[i]>ratings[i-1]:
             l[i]=l[i-1]+1
@@ -30,12 +49,9 @@ def candy(ratings):
 
     for i in range(n-2,-1,-1):
         if ratings[i]>ratings[i+1]:
-            r[i]=r[i+1]+1
-    c=0
-    for i in range(n):
-        c+=max(r[i],l[i])
-
-    return c
+            l[i]=max(l[i],l[i+1]+1)
+    
+    return sum(l)
 
 p=list(map(int,input().split()))
 print(candy(p))
