@@ -41,4 +41,6 @@ def countGoodSubstrings(s):
 
     return c
 
+print(countGoodSubstrings(input()))
+
     
