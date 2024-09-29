@@ -20,7 +20,21 @@ def postOrder(root):
     if root:
         preOrder(root.left)
         preOrder(root.right)   
-        print(root.data,end=" ")     
+        print(root.data,end=" ")  
+        
+def levelOrder(root):
+    if not root:
+        return
+    queue = []
+    queue.append(root)
+    while queue:
+        node = queue.pop(0)
+        print(node.value, end=' ')
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
                                
 root=Node(10)
 root.left=Node(20)
@@ -31,7 +45,9 @@ root.right.left=Node(60)
 root.right.right=Node(70)
 print("Inorder:",end=" ")
 inOrder(root)
-print("\nPreorder:",end=" ")
+print("\nPreOrder:",end=" ")
 preOrder(root)
-print("\nPostrder",end=" ")
+print("\nPostOrder",end=" ")
 postOrder(root)
+print("\nLevelOrder",end=" ")
+levelOrder(root)
